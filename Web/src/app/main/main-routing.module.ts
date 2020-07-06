@@ -6,7 +6,7 @@ import {MapComponent} from "./map/map.component";
 
 const routes: Routes = [
   {
-    path: 'main',
+    path: '',
     component: MainComponent,
     children: [
       {
