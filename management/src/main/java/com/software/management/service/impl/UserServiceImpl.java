@@ -19,6 +19,11 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserModelMapper userModelMapper;
 
+    /**
+     * 获取全部人员信息
+     *
+     * @return 全部人员信息
+     */
     @Override
     public List<UserModel> getAll() {
         return userModelMapper.getAll();

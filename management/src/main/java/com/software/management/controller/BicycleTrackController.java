@@ -23,6 +23,11 @@ public class BicycleTrackController {
     @Autowired
     BicycleTrackService bicycleTrackService;
 
+    /**
+     * 获取所有自行车轨迹信息
+     *
+     * @return 所有自行车轨迹
+     */
     @RequestMapping(value = {"/getAll"}, method = RequestMethod.GET)
     public ResponseEntity<List<BicycleTrackModel>> getAll() {
         List<BicycleTrackModel> result = bicycleTrackService.getAll();

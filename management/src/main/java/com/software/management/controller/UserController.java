@@ -23,6 +23,11 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    /**
+     * 获取所有人员
+     *
+     * @return 所有人员信息
+     */
     @RequestMapping(value = {"/getAll"}, method = RequestMethod.GET)
     public ResponseEntity<List<UserModel>> getAll() {
         List<UserModel> result = userService.getAll();

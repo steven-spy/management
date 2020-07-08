@@ -14,6 +14,11 @@ public class BicycleTrackServiceImpl implements BicycleTrackService {
     @Autowired
     BicycleTrackModelMapper bicycleTrackModelMapper;
 
+    /**
+     * 获取全部自行车轨迹
+     *
+     * @return 全部自行车轨迹
+     */
     @Override
     public List<BicycleTrackModel> getAll() {
         return bicycleTrackModelMapper.getAll();
