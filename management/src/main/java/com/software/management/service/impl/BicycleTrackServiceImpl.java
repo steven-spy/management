@@ -23,4 +23,15 @@ public class BicycleTrackServiceImpl implements BicycleTrackService {
     public List<BicycleTrackModel> getAll() {
         return bicycleTrackModelMapper.getAll();
     }
+
+    /**
+     * 获取指定自行车轨迹
+     *
+     * @param btBicycleName
+     * @return 自行车轨迹
+     */
+    @Override
+    public List<BicycleTrackModel> getAppointBicycleTrack(String btBicycleName) {
+        return bicycleTrackModelMapper.getAppointBicycleTrack(btBicycleName);
+    }
 }

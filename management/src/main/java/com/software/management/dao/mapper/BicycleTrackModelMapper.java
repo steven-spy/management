@@ -16,4 +16,12 @@ public interface BicycleTrackModelMapper {
      * @return 全部自行车轨迹
      */
     List<BicycleTrackModel> getAll();
+
+    /**
+     * 获取指定自行车轨迹
+     *
+     * @param btBicycleName
+     * @return 自行车轨迹
+     */
+    List<BicycleTrackModel> getAppointBicycleTrack(String btBicycleName);
 }

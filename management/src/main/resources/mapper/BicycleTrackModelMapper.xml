@@ -19,4 +19,12 @@
         <include refid="columns"/>
         from management.bicycleTrack;
     </select>
+
+    <select id="getAppointBicycleTrack" resultType="com.software.management.dao.model.BicycleTrackModel"
+            resultMap="BaseResultMap">
+        select
+        <include refid="columns"/>
+        from management.bicycleTrack
+        where bt_bicycleName = #{btBicycleName, jdbcType=VARCHAR};
+    </select>
 </mapper>
