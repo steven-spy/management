@@ -1,5 +1,10 @@
 package com.software.management.dao.model;
 
+/**
+ * 自行车轨迹实体类
+ *
+ * @author spy
+ */
 public class BicycleTrackModel {
     private int btId;
     private String btBicycleName;
