@@ -10,8 +10,11 @@ export class BicycleTrackService {
   ) {
   }
 
-  getUser() {
+  getAll() {
     return this.http.get('/BicycleTrack/getAll');
   }
 
+  getAppointBicycleTrack(data: any) {
+    return this.http.get('/BicycleTrack/getAppointBicycleTrack?btBicycleName=' + data);
+  }
 }

@@ -1,16 +1,15 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { MainRoutingModule } from './main-routing.module';
-import { MapComponent } from './map/map.component';
+import {MainRoutingModule} from './main-routing.module';
 import {UserService} from "../Service/user.service";
 import {NgZorroAntdModule, NzButtonModule} from "ng-zorro-antd";
 import {BicycleTrackService} from "../Service/bicycleTrack.service";
 
 
 @NgModule({
-  declarations: [MapComponent],
-  providers: [UserService,BicycleTrackService],
+  declarations: [],
+  providers: [UserService, BicycleTrackService],
   imports: [
     CommonModule,
     MainRoutingModule,
@@ -18,4 +17,5 @@ import {BicycleTrackService} from "../Service/bicycleTrack.service";
     NgZorroAntdModule,
   ]
 })
-export class MainModule { }
+export class MainModule {
+}

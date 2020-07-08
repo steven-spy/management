@@ -1,0 +1,17 @@
+<div nz-row nzJustify="space-around">
+  <div nz-col nzSpan="4"></div>
+  <div nz-col nzSpan="4"></div>
+  <div nz-col nzSpan="4"></div>
+  <div nz-col nzSpan="4">
+    <nz-select
+      nzSize="default"
+      [(ngModel)]="selectedUser"
+      nzPlaceHolder="Select users"
+      nzAllowClear
+    >
+      <nz-option *ngFor="let i of optionList" [nzValue]="i.btBicycleName" [nzLabel]="i.btBicycleName"></nz-option>
+    </nz-select>
+    <button nz-button nzType="primary" nzSearch nzSize="default" (click)="searchBicycle()">Search</button>
+  </div>
+</div>
+<div id="map" style="width:100%;height: 100%"></div>

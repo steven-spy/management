@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {UserService} from "../../Service/user.service";
-import {BicycleTrackService} from "../../Service/bicycleTrack.service";
+import {UserService} from "../Service/user.service";
+import {BicycleTrackService} from "../Service/bicycleTrack.service";
 
 declare var BMap: any;
 
@@ -11,7 +11,8 @@ declare var BMap: any;
 })
 export class MapComponent implements OnInit {
 
-  listData: any;
+  optionList: any;
+  selectedUser: any;
   bicycleListData: any;
 
   constructor(
@@ -21,13 +22,15 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getBicycleTrack();
   }
 
-  getAllUser() {
-    this.userService.getUser().subscribe(res => {
-      this.listData = res;
-    })
+  getBicycleTrack() {
+    this.bicycleTrackService.getAll().subscribe(res => {
+      this.optionList = res;
+    });
   }
+
 
   ngAfterViewInit() {
     const map = new BMap.Map('map');//创建地图实例
@@ -49,8 +52,9 @@ export class MapComponent implements OnInit {
   }
 
   searchBicycle() {
+    console.info(this.selectedUser);
     const map = new BMap.Map('map');
-    this.bicycleTrackService.getUser().subscribe(res => {
+    this.bicycleTrackService.getAppointBicycleTrack(this.selectedUser).subscribe(res => {
       this.bicycleListData = res;
       for (let i = 0; i < this.bicycleListData.length; i++) {
         var myP1 = new BMap.Point(this.bicycleListData[i].btOrJd, this.bicycleListData[i].btOrWd);    //起点
