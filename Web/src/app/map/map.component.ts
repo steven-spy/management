@@ -45,10 +45,25 @@ export class MapComponent implements OnInit {
       title: "海底捞王府井店", // 信息窗口标题
       enableMessage: false,//设置不允许信息窗发送短息
     };
-    const infoWindow = new BMap.InfoWindow("地址：北京市东城区王府井大街88号乐天银泰百货八层", opts);  // 创建信息窗口对象
-    marker.addEventListener("click", function () {
-      map.openInfoWindow(infoWindow, point); //开启信息窗口
-    });
+    // const infoWindow = new BMap.InfoWindow("地址：北京市东城区王府井大街88号乐天银泰百货八层", opts);  // 创建信息窗口对象
+    // marker.addEventListener("click", function () {
+    //   map.openInfoWindow(infoWindow, point); //开启信息窗口
+    // });
+    map.enableInertialDragging();
+    map.enableContinuousZoom();
+    var size = new BMap.Size(10, 20);
+    map.addControl(new BMap.CityListControl({
+      anchor: 'BMAP_ANCHOR_TOP_LEFT',
+      offset: size,
+      // 切换城市之前事件
+      // onChangeBefore: function(){
+      //    alert('before');
+      // },
+      // 切换城市之后事件
+      // onChangeAfter:function(){
+      //   alert('after');
+      // }
+    }));
   }
 
   searchBicycle() {
