@@ -1,4 +1,4 @@
-package com.software.management.config;
+package com.software.management.interceptor;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
