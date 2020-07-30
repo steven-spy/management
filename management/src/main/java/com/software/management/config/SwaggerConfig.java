@@ -32,9 +32,9 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 //页面标题
-                .title("Kitty API Doc")
+                .title("SPY API 文档")
                 //接口描述
-                .description("This is a restful api document of Kitty.")
+                .description("阿巴阿巴阿巴！！！")
                 .version("1.0")
                 .build();
     }

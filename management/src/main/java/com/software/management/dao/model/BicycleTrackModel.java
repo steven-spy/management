@@ -1,16 +1,26 @@
 package com.software.management.dao.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * 自行车轨迹实体类
  *
  * @author spy
  */
+@ApiModel(value = "自行车轨迹实体类")
 public class BicycleTrackModel {
+    @ApiModelProperty(value = "自行车轨迹唯一标识")
     private int btId;
+    @ApiModelProperty(value = "自行车名称")
     private String btBicycleName;
+    @ApiModelProperty(value = "自行车原始经度")
     private String btOrJd;
+    @ApiModelProperty(value = "自行车原始纬度")
     private String btOrWd;
+    @ApiModelProperty(value = "自行车当前经度")
     private String btPrJd;
+    @ApiModelProperty(value = "自行车当前纬度")
     private String btPrWd;
 
     public int getBtId() {

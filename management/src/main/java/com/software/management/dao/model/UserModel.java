@@ -1,16 +1,26 @@
 package com.software.management.dao.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 /**
  * 用户实体类
  *
  * @author spy
  */
+@ApiModel(value = "用户实体类")
 public class UserModel {
+    @ApiModelProperty(value = "用户唯一标识")
     private int uId;
+    @ApiModelProperty(value = "用户姓名")
     private String uName;
+    @ApiModelProperty(value = "用户年龄")
     private int uAge;
+    @ApiModelProperty(value = "用户性别")
     private String uSex;
+    @ApiModelProperty(value = "用户电话")
     private String uPhone;
+    @ApiModelProperty(value = "用户身份证")
     private String uCard;
 
     public int getuId() {
