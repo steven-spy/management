@@ -25,7 +25,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo())
                 .select()
                 //指定包路径，可直接指点controller包路径也可全部
-                .apis(RequestHandlerSelectors.any())
+                .apis(RequestHandlerSelectors.basePackage("com.software.management.controller"))
                 .paths(PathSelectors.any()).build();
     }
 
