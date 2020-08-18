@@ -1,0 +1,76 @@
+<div nz-row nzJustify="space-between">
+  <div nz-col nzSpan="6" nzOffset="1">
+    自行车：
+    <input nzSize="large" type="text" nz-input [(ngModel)]="inputValue" placeholder="自行车编号" style="width: 150px"/>
+  </div>
+  <div nz-col nzSpan="6" nzOffset="11">
+    <button class="addButton" nz-button nzSize="large" nzType="primary"
+            (click)="searchBicycle()" [disabled]="inputValue === undefined || inputValue === null || inputValue === ''">
+      搜索自行车
+    </button>
+    &nbsp;
+    <button class="addButton" nz-button nzSize="large" nzType="primary"
+            (click)="addBicycle()">
+      添加自行车
+    </button>
+  </div>
+</div>
+<br/>
+<nz-table #Table [nzData]="listOfDisplayData" nzBordered [(nzPageSize)]="pageSize" [nzLoading]="loading"
+          [nzShowPagination]="true">
+  <thead>
+  <tr>
+    <th class="tr">自行车</th>
+    <th class="tr">自行车状态</th>
+    <th class="tr">所在租赁点</th>
+    <th class="tr">操作</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of Table.data">
+    <td class="tr">{{ data.biName }}</td>
+    <td class="tr">{{ data.biState }}</td>
+    <td class="tr">{{ data.biPoint }}</td>
+    <td>
+      <div class="button">
+        <button nz-button (click)="deleteBicycle(data)" [disabled]="data.leaseState === '租赁中'">
+          <i nz-icon nzType="delete" nzTheme="twotone"></i>删除
+        </button>
+        <button nz-button (click)="updateBicycle(data)"
+                [disabled]="data.leaseState === '租赁中' || data.bicycleState === '无法使用' || data.bicycleMainTain === '维修中'">
+          <i nz-icon nzType="edit" nzTheme="twotone"></i>更改
+        </button>
+        <button nz-button (click)="open(data)">
+          <i nz-icon nzType="edit" nzTheme="twotone"></i>查看
+        </button>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>
+<nz-drawer [nzVisible]="visible" [nzWidth]="640" [nzClosable]="false" (nzOnClose)="close()">
+  <nz-descriptions [nzColumn]="2" nzTitle="详细信息">
+    <nz-descriptions-item nzTitle="自行车编号" [nzSpan]="1">{{biName}}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="所在租赁点" [nzSpan]="1">{{biPoint}}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="自行车租赁状态" [nzSpan]="1">{{biState}}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="当前所在经度" [nzSpan]="1">{{biJd}}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="当前所在纬度" [nzSpan]="1">{{biWd}}</nz-descriptions-item>
+    <nz-descriptions-item nzTitle="Status" [nzSpan]="4">
+      <!--      processing | error -->
+      <nz-badge [nzStatus]="state" [nzText]="text"></nz-badge>
+    </nz-descriptions-item>
+  </nz-descriptions>
+  <nz-divider></nz-divider>
+  <div id="map" style="width:100%;height: 60%"></div>
+</nz-drawer>
+<!--<div class="pagination">-->
+<!--  <nz-pagination [(nzPageIndex)]="current" [nzTotal]="total" (nzPageIndexChange)="changePageIndex($event)"-->
+<!--                 [nzPageSize]="pageSize"-->
+<!--                 nzShowQuickJumper></nz-pagination>-->
+<!--</div>-->
+
+<!--<nz-modal [(nzVisible)]="isVisible" nzTitle="请注意" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">-->
+<!--  是否删除自行车名为"{{name}}",状态为"{{state}}"这条数据？-->
+<!--</nz-modal>-->
+
+

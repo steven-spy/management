@@ -16,7 +16,6 @@ import {registerLocaleData} from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import {MapComponent} from "./map/map.component";
 import {NgZorroAntdModule} from "ng-zorro-antd";
-import { BicycleInformationComponent } from './bicycle-information/bicycle-information.component';
 
 registerLocaleData(zh);
 
@@ -25,7 +24,6 @@ registerLocaleData(zh);
     AppComponent,
     MainComponent,
     MapComponent,
-    BicycleInformationComponent
   ],
   imports: [
     BrowserModule,

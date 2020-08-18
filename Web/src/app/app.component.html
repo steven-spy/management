@@ -12,8 +12,15 @@
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
       <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
         <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/main">主信息</a>
+          <li nz-submenu nzTitle="主信息">
+            <ul>
+              <li nz-menu-item nzMatchRouter>
+                <a routerLink="/main/bicycleInformation">车辆信息</a>
+              </li>
+              <li nz-menu-item nzMatchRouter>
+                <a routerLink="/map2">Option 8</a>
+              </li>
+            </ul>
           </li>
           <li nz-menu-item nzMatchRouter>
             <a routerLink="/map">地图</a>

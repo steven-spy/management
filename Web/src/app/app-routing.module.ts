@@ -4,7 +4,7 @@ import {MapComponent} from "./map/map.component";
 
 const routes: Routes = [
   {
-    path: '', pathMatch: 'full', redirectTo: '/main'
+    path: '', pathMatch: 'full', redirectTo: '/main/bicycleInformation'
   },
   {
     path: 'main',
