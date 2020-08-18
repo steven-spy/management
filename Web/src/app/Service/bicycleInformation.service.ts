@@ -10,8 +10,8 @@ export class BicycleInformationService {
   ) {
   }
 
-  getAll() {
-    return this.http.get('/Bicycle/getAll');
+  getBicycleCount() {
+    return this.http.get('/Bicycle/getBicycleCount');
   }
 
   getAllWithPaging(pageSize: number, pageCount: number) {

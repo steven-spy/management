@@ -14,7 +14,7 @@ export class BicycleInformationComponent implements OnInit {
   pageSize: number = 6;
   loading: any;
   current: number = 1;
-  total: number;
+  total: any;
   visible: boolean = false;
   biName: string;
   biPoint: string;
@@ -30,7 +30,7 @@ export class BicycleInformationComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.getBicycleInformation();
+    this.getBicycleInformation();
     this.getBicycleCount();
   }
 
@@ -52,23 +52,19 @@ export class BicycleInformationComponent implements OnInit {
 
   getBicycleInformation() {
     this.bicycleInformationService.getAllWithPaging(this.pageSize, 1).subscribe(res => {
-      console.info(res);
       this.listOfDisplayData = res;
     })
   }
 
   changePageIndex(data: any) {
-    console.info(data);
     this.bicycleInformationService.getAllWithPaging(this.pageSize, data).subscribe(res => {
       this.listOfDisplayData = res;
     })
   }
 
   getBicycleCount() {
-    this.bicycleInformationService.getAll().subscribe(res => {
-      console.info(res);
-      this.listOfDisplayData = res;
-      this.total = this.listOfDisplayData.length;
+    this.bicycleInformationService.getBicycleCount().subscribe(res => {
+      this.total = res;
     })
   }
 

@@ -26,13 +26,25 @@ public class BicycleController {
     @Autowired
     BicycleService bicycleService;
 
+    /**
+     * 获取自行车数量
+     *
+     * @return int
+     */
     @ApiOperation(value = "获取所有自行车全部信息")
-    @RequestMapping(value = {"/getAll"}, method = RequestMethod.GET)
-    public ResponseEntity<List<BicycleModel>> getAll() {
-        List<BicycleModel> result = bicycleService.getAll();
+    @RequestMapping(value = {"/getBicycleCount"}, method = RequestMethod.GET)
+    public ResponseEntity<Integer> getBicycleCount() {
+        int result = bicycleService.getBicycleCount();
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
+    /**
+     * 获取部分自行车信息
+     *
+     * @param pageSize
+     * @param pageCount
+     * @return List<BicycleModel>
+     */
     @ApiOperation(value = "获取自行车部分全部信息")
     @RequestMapping(value = {"/getAllWithPaging"}, method = RequestMethod.GET)
     public ResponseEntity<List<BicycleModel>> getAllWithPaging(int pageSize, int pageCount) {

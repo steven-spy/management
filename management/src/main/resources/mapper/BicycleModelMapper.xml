@@ -14,11 +14,12 @@
         bi_id,bi_name,bi_point,bi_state,bi_jd,bi_wd
     </sql>
 
-    <select id="getAll" resultType="com.software.management.dao.model.UserModel" resultMap="BaseResultMap">
+    <select id="getBicycleCount" resultType="java.lang.Integer">
         select
-        <include refid="columns"/>
+        count (*)
         from management.bicycleInformation;
     </select>
+
 
     <select id="getAllWithPaging" resultType="com.software.management.dao.model.BicycleModel" resultMap="BaseResultMap">
         select

@@ -11,11 +11,11 @@ import java.util.List;
  */
 public interface BicycleService {
     /**
-     * 获取全部自行车信息
+     * 获取自行车数量
      *
-     * @return List<BicycleModel>
+     * @return int
      */
-    List<BicycleModel> getAll();
+    int getBicycleCount();
 
     /**
      * 获取部分自行车信息

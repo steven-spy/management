@@ -17,7 +17,7 @@
 </div>
 <br/>
 <nz-table #Table [nzData]="listOfDisplayData" nzBordered [(nzPageSize)]="pageSize" [nzLoading]="loading"
-          [nzShowPagination]="true">
+          [nzShowPagination]="false">
   <thead>
   <tr>
     <th class="tr">自行车</th>
@@ -63,11 +63,11 @@
   <nz-divider></nz-divider>
   <div id="map" style="width:100%;height: 60%"></div>
 </nz-drawer>
-<!--<div class="pagination">-->
-<!--  <nz-pagination [(nzPageIndex)]="current" [nzTotal]="total" (nzPageIndexChange)="changePageIndex($event)"-->
-<!--                 [nzPageSize]="pageSize"-->
-<!--                 nzShowQuickJumper></nz-pagination>-->
-<!--</div>-->
+<div class="pagination">
+  <nz-pagination [(nzPageIndex)]="current" [nzTotal]="total" (nzPageIndexChange)="changePageIndex($event)"
+                 [nzPageSize]="pageSize"
+                 nzShowQuickJumper></nz-pagination>
+</div>
 
 <!--<nz-modal [(nzVisible)]="isVisible" nzTitle="请注意" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">-->
 <!--  是否删除自行车名为"{{name}}",状态为"{{state}}"这条数据？-->

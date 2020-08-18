@@ -12,11 +12,11 @@ import java.util.List;
  */
 public interface BicycleModelMapper {
     /**
-     * 获取全部自行车信息
+     * 获取自行车数量
      *
      * @return List<BicycleModel>
      */
-    List<BicycleModel> getAll();
+    int getBicycleCount();
 
     /**
      * 获取部分自行车信息

@@ -19,11 +19,23 @@ public class BicycleServiceImpl implements BicycleService {
     @Autowired
     BicycleModelMapper bicycleModelMapper;
 
+    /**
+     * 获取自行车数量
+     *
+     * @return int
+     */
     @Override
-    public List<BicycleModel> getAll() {
-        return bicycleModelMapper.getAll();
+    public int getBicycleCount() {
+        return bicycleModelMapper.getBicycleCount();
     }
 
+    /**
+     * 获取部分自行车信息
+     *
+     * @param pageSize
+     * @param pageIndex
+     * @return List<BicycleModel>
+     */
     @Override
     public List<BicycleModel> getAllWithPaging(int pageSize, int pageIndex) {
         return bicycleModelMapper.getAllWithPaging(pageSize, pageIndex);
