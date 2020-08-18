@@ -23,4 +23,9 @@ public class BicycleServiceImpl implements BicycleService {
     public List<BicycleModel> getAll() {
         return bicycleModelMapper.getAll();
     }
+
+    @Override
+    public List<BicycleModel> getAllWithPaging(int pageSize, int pageIndex) {
+        return bicycleModelMapper.getAllWithPaging(pageSize, pageIndex);
+    }
 }

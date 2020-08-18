@@ -16,6 +16,13 @@ export class BicycleInformationComponent implements OnInit {
   current: number = 1;
   total: number;
   visible: boolean = false;
+  biName: string;
+  biPoint: string;
+  biState: boolean;
+  biJd: string;
+  biWd: string;
+  state: string;
+  text: string;
 
   constructor(
     private bicycleInformationService: BicycleInformationService
@@ -65,13 +72,6 @@ export class BicycleInformationComponent implements OnInit {
     })
   }
 
-  biName: string;
-  biPoint: string;
-  biState: boolean;
-  biJd: string;
-  biWd: string;
-  state: string;
-  text: string;
 
   open(data: any) {
     console.info(data);

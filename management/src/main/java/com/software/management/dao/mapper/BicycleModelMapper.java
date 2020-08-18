@@ -1,6 +1,7 @@
 package com.software.management.dao.mapper;
 
 import com.software.management.dao.model.BicycleModel;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -10,5 +11,19 @@ import java.util.List;
  * @author spy
  */
 public interface BicycleModelMapper {
+    /**
+     * 获取全部自行车信息
+     *
+     * @return List<BicycleModel>
+     */
     List<BicycleModel> getAll();
+
+    /**
+     * 获取部分自行车信息
+     *
+     * @param pageSize
+     * @param pageIndex
+     * @return List<BicycleModel>
+     */
+    List<BicycleModel> getAllWithPaging(@Param("pageSize") int pageSize, @Param("pageIndex") int pageIndex);
 }

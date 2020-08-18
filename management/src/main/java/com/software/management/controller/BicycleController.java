@@ -32,4 +32,12 @@ public class BicycleController {
         List<BicycleModel> result = bicycleService.getAll();
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
+
+    @ApiOperation(value = "获取自行车部分全部信息")
+    @RequestMapping(value = {"/getAllWithPaging"}, method = RequestMethod.GET)
+    public ResponseEntity<List<BicycleModel>> getAllWithPaging(int pageSize, int pageCount) {
+        int pageIndex = (pageCount - 1) * pageSize;
+        List<BicycleModel> result = bicycleService.getAllWithPaging(pageSize, pageIndex);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
 }

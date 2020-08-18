@@ -19,4 +19,10 @@
         <include refid="columns"/>
         from management.bicycleInformation;
     </select>
+
+    <select id="getAllWithPaging" resultType="com.software.management.dao.model.BicycleModel" resultMap="BaseResultMap">
+        select
+        <include refid="columns"/>
+        from management.bicycleInformation limit #{pageSize} offset #{pageIndex};
+    </select>
 </mapper>
