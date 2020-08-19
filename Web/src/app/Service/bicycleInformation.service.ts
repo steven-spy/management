@@ -18,7 +18,7 @@ export class BicycleInformationService {
     return this.http.get('/Bicycle/getAllWithPaging?pageSize=' + pageSize + '&pageCount=' + pageCount);
   }
 
-  getAppointBicycleTrack(data: any) {
-    return this.http.get('/BicycleTrack/getAppointBicycleTrack?btBicycleName=' + data);
+  searchBicycleByName(inputValue: any) {
+    return this.http.get('/Bicycle/searchBicycleByName?biName=' + inputValue);
   }
 }

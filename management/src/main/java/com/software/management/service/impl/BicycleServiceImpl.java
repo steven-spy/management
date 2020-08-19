@@ -40,4 +40,15 @@ public class BicycleServiceImpl implements BicycleService {
     public List<BicycleModel> getAllWithPaging(int pageSize, int pageIndex) {
         return bicycleModelMapper.getAllWithPaging(pageSize, pageIndex);
     }
+
+    /**
+     * 根据条件查询自行车信息
+     *
+     * @param biName
+     * @return List<BicycleModel>
+     */
+    @Override
+    public List<BicycleModel> searchBicycleByName(String biName) {
+        return bicycleModelMapper.searchBicycleByName(biName);
+    }
 }

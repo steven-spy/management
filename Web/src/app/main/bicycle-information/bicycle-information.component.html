@@ -1,7 +1,13 @@
 <div nz-row nzJustify="space-between">
   <div nz-col nzSpan="6" nzOffset="1">
     自行车：
-    <input nzSize="large" type="text" nz-input [(ngModel)]="inputValue" placeholder="自行车编号" style="width: 150px"/>
+    <nz-input-group [nzSuffix]="inputClearTpl" style="width: 150px">
+      <input nzSize="large" type="text" nz-input [(ngModel)]="inputValue" placeholder="自行车编号" style="width: 150px"/>
+    </nz-input-group>
+    <ng-template #inputClearTpl>
+      <i nz-icon class="ant-input-clear-icon" nzTheme="fill" nzType="close-circle" *ngIf="inputValue"
+         (click)="inputClick()"></i
+      ></ng-template>
   </div>
   <div nz-col nzSpan="6" nzOffset="11">
     <button class="addButton" nz-button nzSize="large" nzType="primary"

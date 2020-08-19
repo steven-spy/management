@@ -25,4 +25,12 @@ public interface BicycleService {
      * @return List<BicycleModel>
      */
     List<BicycleModel> getAllWithPaging(int pageSize, int pageIndex);
+
+    /**
+     * 根据条件查询自行车信息
+     *
+     * @param biName
+     * @return List<BicycleModel>
+     */
+    List<BicycleModel> searchBicycleByName(String biName);
 }

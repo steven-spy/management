@@ -24,6 +24,14 @@
     <select id="getAllWithPaging" resultType="com.software.management.dao.model.BicycleModel" resultMap="BaseResultMap">
         select
         <include refid="columns"/>
-        from management.bicycleInformation limit #{pageSize} offset #{pageIndex};
+        from management.bicycleInformation order by bi_id
+        limit #{pageSize} offset #{pageIndex};
+    </select>
+    <select id="searchBicycleByName" resultType="com.software.management.dao.model.BicycleModel"
+            resultMap="BaseResultMap">
+        select
+        <include refid="columns"/>
+        from management.bicycleInformation
+        where bi_name like '%${biName,jdbcType=VARCHAR}%';
     </select>
 </mapper>

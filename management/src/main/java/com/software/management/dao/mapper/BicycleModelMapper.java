@@ -26,4 +26,12 @@ public interface BicycleModelMapper {
      * @return List<BicycleModel>
      */
     List<BicycleModel> getAllWithPaging(@Param("pageSize") int pageSize, @Param("pageIndex") int pageIndex);
+
+    /**
+     * 根据条件查询自行车信息
+     *
+     * @param biName
+     * @return List<BicycleModel>
+     */
+    List<BicycleModel> searchBicycleByName(String biName);
 }

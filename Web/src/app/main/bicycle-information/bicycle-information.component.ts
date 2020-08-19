@@ -47,7 +47,11 @@ export class BicycleInformationComponent implements OnInit {
   }
 
   searchBicycle() {
-
+    this.bicycleInformationService.searchBicycleByName(this.inputValue).subscribe(res => {
+      console.info(res);
+      this.listOfDisplayData = res;
+      this.total = this.listOfDisplayData.length;
+    });
   }
 
   getBicycleInformation() {
@@ -92,21 +96,27 @@ export class BicycleInformationComponent implements OnInit {
   }
 
   getBicycleLocation() {
-    const map = new BMap.Map('map', {enableMapClick: false});//创建地图实例,禁止点击地标
+    const map = new BMap.Map('map');//创建地图实例
     const point = new BMap.Point(this.biJd, this.biWd);//创建点坐标
     map.centerAndZoom(point, 15);//初始化地图，设置中心点坐标和地图级别
-    map.disableDragging(); //禁止拖拽
     const marker = new BMap.Marker(point);  // 创建标注
     map.addOverlay(marker);              // 将标注添加到地图中
     const opts = {
       width: 200,     // 信息窗口宽度
       height: 100,     // 信息窗口高度
-      title: "海底捞王府井店", // 信息窗口标题
+      title: this.biName, // 信息窗口标题
       enableMessage: false,//设置不允许信息窗发送短息
     };
-    const infoWindow = new BMap.InfoWindow("地址：北京市东城区王府井大街88号乐天银泰百货八层", opts);  // 创建信息窗口对象
+    const infoWindow = new BMap.InfoWindow("地址：" + this.biPoint + "<br>" + "当前租赁点内自行车数量：" + this.total, opts);  // 创建信息窗口对象
     marker.addEventListener("click", function () {
       map.openInfoWindow(infoWindow, point); //开启信息窗口
     });
+  }
+
+  inputClick() {
+    this.inputValue = null;
+    this.listOfDisplayData = null;
+    this.getBicycleInformation();
+    this.getBicycleCount();
   }
 }

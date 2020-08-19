@@ -52,4 +52,17 @@ public class BicycleController {
         List<BicycleModel> result = bicycleService.getAllWithPaging(pageSize, pageIndex);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
+
+    /**
+     * 根据条件查询自行车信息
+     *
+     * @param biName
+     * @return List<BicycleModel>
+     */
+    @ApiOperation(value = "根据条件查询自行车信息")
+    @RequestMapping(value = {"/searchBicycleByName"}, method = RequestMethod.GET)
+    public ResponseEntity<List<BicycleModel>> searchBicycleByName(String biName) {
+        List<BicycleModel> result = bicycleService.searchBicycleByName(biName);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
 }
