@@ -7,9 +7,9 @@ import {Router} from "@angular/router";
       <!--    <p>-->
       <!--        main works!-->
       <!--    </p>-->
-      <!--    <p>-->
-      <!--        main works!-->
-      <!--    </p>-->
+      <!--      <p>-->
+      <!--          main works!-->
+      <!--      </p>-->
       <!--&lt;!&ndash;    <button (click)="map()">map</button>&ndash;&gt;-->
       <router-outlet></router-outlet>
   `,

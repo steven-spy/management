@@ -12,7 +12,7 @@ export class BicycleInformationComponent implements OnInit {
   inputValue: any;
   listOfDisplayData: any;
   pageSize: number = 6;
-  loading: any;
+  loading: boolean = true;
   current: number = 1;
   total: any;
   visible: boolean = false;
@@ -57,6 +57,7 @@ export class BicycleInformationComponent implements OnInit {
   getBicycleInformation() {
     this.bicycleInformationService.getAllWithPaging(this.pageSize, 1).subscribe(res => {
       this.listOfDisplayData = res;
+      this.loading = false;
     })
   }
 

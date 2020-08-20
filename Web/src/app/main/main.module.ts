@@ -8,11 +8,13 @@ import {BicycleTrackService} from "../Service/bicycleTrack.service";
 import {BicycleInformationComponent} from "./bicycle-information/bicycle-information.component";
 import {FormsModule} from "@angular/forms";
 import {BicycleInformationService} from "../Service/bicycleInformation.service";
+import { BicycleRepairComponent } from './bicycle-repair/bicycle-repair.component';
 
 
 @NgModule({
   declarations: [
-    BicycleInformationComponent
+    BicycleInformationComponent,
+    BicycleRepairComponent
   ],
   providers: [UserService, BicycleTrackService, BicycleInformationService],
   imports: [

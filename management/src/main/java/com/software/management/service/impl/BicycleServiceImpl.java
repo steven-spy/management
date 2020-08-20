@@ -30,7 +30,7 @@ public class BicycleServiceImpl implements BicycleService {
     }
 
     /**
-     * 获取部分自行车信息
+     * 获取自行车分页信息
      *
      * @param pageSize
      * @param pageIndex
@@ -42,6 +42,16 @@ public class BicycleServiceImpl implements BicycleService {
     }
 
     /**
+     * 获取维修中自行车分页信息
+     *
+     * @return List<BicycleModel>
+     */
+    @Override
+    public List<BicycleModel> getAllWithCondition() {
+        return bicycleModelMapper.getAllWithCondition();
+    }
+
+    /**
      * 根据条件查询自行车信息
      *
      * @param biName
@@ -50,5 +60,16 @@ public class BicycleServiceImpl implements BicycleService {
     @Override
     public List<BicycleModel> searchBicycleByName(String biName) {
         return bicycleModelMapper.searchBicycleByName(biName);
+    }
+
+    /**
+     * 根据biId维修自行车
+     *
+     * @param biId
+     * @return int
+     */
+    @Override
+    public int repairBicycle(int biId) {
+        return bicycleModelMapper.repairBicycle(biId);
     }
 }

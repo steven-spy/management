@@ -18,7 +18,15 @@ export class BicycleInformationService {
     return this.http.get('/Bicycle/getAllWithPaging?pageSize=' + pageSize + '&pageCount=' + pageCount);
   }
 
+  getAllWithCondition() {
+    return this.http.get('/Bicycle/getAllWithCondition');
+  }
+
   searchBicycleByName(inputValue: any) {
     return this.http.get('/Bicycle/searchBicycleByName?biName=' + inputValue);
+  }
+
+  repairBicycle(data: any) {
+    return this.http.get('/Bicycle/repairBicycle?biId=' + data);
   }
 }

@@ -1,0 +1,49 @@
+<nz-table #Table [nzData]="listOfDisplayData" nzBordered [(nzPageSize)]="pageSize" [nzLoading]="loading"
+          [nzShowPagination]="true">
+  <thead>
+  <tr>
+    <th class="tr">自行车</th>
+    <th class="tr">自行车状态</th>
+    <th class="tr">所在租赁点</th>
+    <th class="tr">操作</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of Table.data">
+    <td class="tr">{{ data.biName }}</td>
+    <td class="tr">{{ data.biState }}</td>
+    <td class="tr">{{ data.biPoint }}</td>
+    <td>
+      <div class="button">
+        <button nz-button (click)="click(data)">
+          <a
+            nz-popconfirm
+            nzPopconfirmTitle="确认要删除{{biName}}这辆自行车么?"
+            nzPopconfirmPlacement="top"
+            (nzOnConfirm)="deleteConfirm(data)"
+          ><i nz-icon nzType="delete" nzTheme="twotone"></i> 删除</a>
+        </button>
+        <button nz-button (click)="click(data)">
+          <a
+            nz-popconfirm
+            nzPopconfirmTitle="确认要维修{{biName}}这辆自行车么?"
+            nzPopconfirmPlacement="top"
+            (nzOnConfirm)="repairConfirm(data)"
+          ><i nz-icon nzType="edit" nzTheme="twotone"></i> 维修</a>
+        </button>
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</nz-table>
+<div class="pagination">
+  <nz-pagination [(nzPageIndex)]="current" [nzTotal]="total" (nzPageIndexChange)="changePageIndex($event)"
+                 [nzPageSize]="pageSize"
+                 nzShowQuickJumper></nz-pagination>
+</div>
+
+<!--<nz-modal [(nzVisible)]="isVisible" nzTitle="请注意" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">-->
+<!--  是否删除自行车名为"{{name}}",状态为"{{state}}"这条数据？-->
+<!--</nz-modal>-->
+
+

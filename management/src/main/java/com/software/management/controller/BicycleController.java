@@ -39,17 +39,29 @@ public class BicycleController {
     }
 
     /**
-     * 获取部分自行车信息
+     * 获取自行车分页信息
      *
      * @param pageSize
      * @param pageCount
      * @return List<BicycleModel>
      */
-    @ApiOperation(value = "获取自行车部分全部信息")
+    @ApiOperation(value = "获取自行车分页信息")
     @RequestMapping(value = {"/getAllWithPaging"}, method = RequestMethod.GET)
     public ResponseEntity<List<BicycleModel>> getAllWithPaging(int pageSize, int pageCount) {
         int pageIndex = (pageCount - 1) * pageSize;
         List<BicycleModel> result = bicycleService.getAllWithPaging(pageSize, pageIndex);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
+    /**
+     * 获取维修中自行车分页信息
+     *
+     * @return List<BicycleModel>
+     */
+    @ApiOperation(value = "获取维修中自行车分页信息")
+    @RequestMapping(value = {"/getAllWithCondition"}, method = RequestMethod.GET)
+    public ResponseEntity<List<BicycleModel>> getAllWithCondition() {
+        List<BicycleModel> result = bicycleService.getAllWithCondition();
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
@@ -63,6 +75,19 @@ public class BicycleController {
     @RequestMapping(value = {"/searchBicycleByName"}, method = RequestMethod.GET)
     public ResponseEntity<List<BicycleModel>> searchBicycleByName(String biName) {
         List<BicycleModel> result = bicycleService.searchBicycleByName(biName);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
+    /**
+     * 根据biId维修自行车
+     *
+     * @param biId
+     * @return int
+     */
+    @ApiOperation(value = "根据biId维修自行车")
+    @RequestMapping(value = {"/repairBicycle"}, method = RequestMethod.GET)
+    public ResponseEntity<Integer> repairBicycle(int biId) {
+        int result = bicycleService.repairBicycle(biId);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }

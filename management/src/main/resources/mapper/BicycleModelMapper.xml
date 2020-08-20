@@ -14,12 +14,17 @@
         bi_id,bi_name,bi_point,bi_state,bi_jd,bi_wd
     </sql>
 
+    <update id="repairBicycle" parameterType="java.lang.Integer">
+        update management.bicycleInformation set
+        bi_state = true
+        where bi_id = #{biId,jdbcType=BIGINT}
+    </update>
+
     <select id="getBicycleCount" resultType="java.lang.Integer">
         select
         count (*)
         from management.bicycleInformation;
     </select>
-
 
     <select id="getAllWithPaging" resultType="com.software.management.dao.model.BicycleModel" resultMap="BaseResultMap">
         select
@@ -27,11 +32,20 @@
         from management.bicycleInformation order by bi_id
         limit #{pageSize} offset #{pageIndex};
     </select>
+
     <select id="searchBicycleByName" resultType="com.software.management.dao.model.BicycleModel"
             resultMap="BaseResultMap">
         select
         <include refid="columns"/>
         from management.bicycleInformation
         where bi_name like '%${biName,jdbcType=VARCHAR}%';
+    </select>
+
+    <select id="getAllWithCondition" resultType="com.software.management.dao.model.BicycleModel"
+            resultMap="BaseResultMap">
+        select
+        <include refid="columns"/>
+        from management.bicycleInformation
+        where bi_state = false
     </select>
 </mapper>
