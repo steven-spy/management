@@ -72,4 +72,15 @@ public class BicycleServiceImpl implements BicycleService {
     public int repairBicycle(int biId) {
         return bicycleModelMapper.repairBicycle(biId);
     }
+
+    /**
+     * 根据biId删除自行车
+     *
+     * @param biId
+     * @return int
+     */
+    @Override
+    public int deleteBicycleById(int biId) {
+        return bicycleModelMapper.deleteBicycleById(biId);
+    }
 }

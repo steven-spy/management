@@ -49,4 +49,12 @@ public interface BicycleModelMapper {
      * @return int
      */
     int repairBicycle(int biId);
+
+    /**
+     * 根据biId删除自行车
+     *
+     * @param biId
+     * @return int
+     */
+    int deleteBicycleById(int biId);
 }

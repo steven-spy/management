@@ -20,6 +20,11 @@
         where bi_id = #{biId,jdbcType=BIGINT}
     </update>
 
+    <delete id="deleteBicycleById" parameterType="java.lang.Integer">
+        delete from management.bicycleInformation
+        where bi_id = #{biId,jdbcType=BIGINT}
+    </delete>
+
     <select id="getBicycleCount" resultType="java.lang.Integer">
         select
         count (*)

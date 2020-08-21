@@ -11,7 +11,7 @@
   <tbody>
   <tr *ngFor="let data of Table.data">
     <td class="tr">{{ data.biName }}</td>
-    <td class="tr">{{ data.biState }}</td>
+    <td class="tr" *ngIf="data.biState === false">损坏</td>
     <td class="tr">{{ data.biPoint }}</td>
     <td>
       <div class="button">

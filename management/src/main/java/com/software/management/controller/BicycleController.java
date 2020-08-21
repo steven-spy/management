@@ -90,4 +90,17 @@ public class BicycleController {
         int result = bicycleService.repairBicycle(biId);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
+
+    /**
+     * 根据biId删除自行车
+     *
+     * @param biId
+     * @return int
+     */
+    @ApiOperation(value = "根据biId删除自行车")
+    @RequestMapping(value = {"/deleteBicycleById"}, method = RequestMethod.GET)
+    public ResponseEntity<Integer> deleteBicycleById(int biId) {
+        int result = bicycleService.deleteBicycleById(biId);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
 }

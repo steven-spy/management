@@ -50,7 +50,7 @@ export class BicycleRepairComponent implements OnInit {
       this.message.create(
         'success',
         this.biName + '自行车维修成功！'
-      )
+      );
       this.getBicycleWithCondition();
     }, error => {
       this.message.create(
@@ -61,6 +61,17 @@ export class BicycleRepairComponent implements OnInit {
   }
 
   deleteConfirm(data: any) {
-    console.info(data);
+    this.bicycleInformationService.deleteBicycleById(data.biId).subscribe(res => {
+      this.message.create(
+        'success',
+        this.biName + '自行车删除成功！'
+      );
+      this.getBicycleWithCondition();
+    }, error => {
+      this.message.create(
+        'error',
+        this.biName + '自行车删除失败！'
+      )
+    });
   }
 }

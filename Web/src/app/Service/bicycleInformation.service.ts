@@ -29,4 +29,8 @@ export class BicycleInformationService {
   repairBicycle(data: any) {
     return this.http.get('/Bicycle/repairBicycle?biId=' + data);
   }
+
+  deleteBicycleById(data: any) {
+    return this.http.get('/Bicycle/deleteBicycleById?biId=' + data);
+  }
 }
