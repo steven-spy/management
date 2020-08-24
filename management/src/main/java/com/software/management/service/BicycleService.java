@@ -5,7 +5,7 @@ import com.software.management.dao.model.BicycleModel;
 import java.util.List;
 
 /**
- * 自行车信息
+ * 自行车接口
  *
  * @author spy
  */

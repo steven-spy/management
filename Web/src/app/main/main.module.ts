@@ -8,15 +8,18 @@ import {BicycleTrackService} from "../Service/bicycleTrack.service";
 import {BicycleInformationComponent} from "./bicycle-information/bicycle-information.component";
 import {FormsModule} from "@angular/forms";
 import {BicycleInformationService} from "../Service/bicycleInformation.service";
-import { BicycleRepairComponent } from './bicycle-repair/bicycle-repair.component';
+import {BicycleRepairComponent} from './bicycle-repair/bicycle-repair.component';
+import {LeasePointComponent} from './lease-point/lease-point.component';
+import {LeasePointService} from "../Service/lease-point.service";
 
 
 @NgModule({
   declarations: [
     BicycleInformationComponent,
-    BicycleRepairComponent
+    BicycleRepairComponent,
+    LeasePointComponent
   ],
-  providers: [UserService, BicycleTrackService, BicycleInformationService],
+  providers: [UserService, BicycleTrackService, BicycleInformationService, LeasePointService],
   imports: [
     CommonModule,
     MainRoutingModule,

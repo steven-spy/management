@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {MainComponent} from "./main.component";
 import {BicycleInformationComponent} from "./bicycle-information/bicycle-information.component";
 import {BicycleRepairComponent} from "./bicycle-repair/bicycle-repair.component";
+import {LeasePointComponent} from "./lease-point/lease-point.component";
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
       {
         path: 'bicycleRepair',
         component: BicycleRepairComponent
+      },
+      {
+        path: 'leasePoint',
+        component: LeasePointComponent
       }
     ]
   }

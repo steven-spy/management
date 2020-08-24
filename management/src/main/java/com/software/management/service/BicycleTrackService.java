@@ -5,7 +5,9 @@ import com.software.management.dao.model.BicycleTrackModel;
 import java.util.List;
 
 /**
- * @author admin
+ * 自行车轨迹接口
+ *
+ * @author spy
  */
 public interface BicycleTrackService {
     /**

@@ -10,7 +10,8 @@ const PROXY_CONFIG = [
     context: [
       '/User',
       '/BicycleTrack',
-      '/Bicycle'
+      '/Bicycle',
+      '/LeasePoint'
     ],
     target: 'http://localhost:8090',
     secure: false,
