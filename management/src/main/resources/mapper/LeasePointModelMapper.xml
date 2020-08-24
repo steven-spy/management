@@ -20,6 +20,14 @@
         from management.leasepoint
     </select>
 
+    <select id="searchLeasePointByName" resultType="com.software.management.dao.model.LeasePointModel"
+            resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from management.leasepoint
+        where lp_name like '%${lpName,jdbcType=VARCHAR}%';
+    </select>
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from "leasePointModel"
     where lp_id = #{lpId,jdbcType=BIGINT}

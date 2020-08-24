@@ -14,4 +14,8 @@ export class LeasePointService {
   getLeasePoint() {
     return this.http.get('/LeasePoint/getAll');
   }
+
+  searchLeasePointByName(data: any) {
+    return this.http.get('/LeasePoint/searchLeasePointByName?lpName=' + data);
+  }
 }

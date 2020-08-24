@@ -35,4 +35,16 @@ public class LeasePointController {
         List<LeasePointModel> result = leasePointService.getAll();
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
+
+    /**
+     * 根据名称搜索租赁点
+     *
+     * @param lpName
+     * @return List<LeasePointModel>
+     */
+    @RequestMapping(value = {"/searchLeasePointByName"}, method = RequestMethod.GET)
+    public ResponseEntity<List<LeasePointModel>> searchLeasePointByName(String lpName) {
+        List<LeasePointModel> result = leasePointService.searchLeasePointByName(lpName);
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
 }

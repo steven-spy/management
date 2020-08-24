@@ -81,10 +81,15 @@ export class LeasePointComponent implements OnInit {
   }
 
   inputClick() {
-
+    this.inputValue = null;
+    this.listOfDisplayData = null;
+    this.getLeasePoint();
   }
 
   searchLeasePoint() {
-
+    this.leasePointService.searchLeasePointByName(this.inputValue).subscribe(res => {
+      console.info(res);
+      this.listOfDisplayData = res;
+    });
   }
 }

@@ -28,4 +28,15 @@ public class LeasePointServiceImpl implements LeasePointService {
     public List<LeasePointModel> getAll() {
         return leasePointModelMapper.getAll();
     }
+
+    /**
+     * 根据名称搜索租赁点
+     *
+     * @param lpName
+     * @return List<LeasePointModel>
+     */
+    @Override
+    public List<LeasePointModel> searchLeasePointByName(String lpName) {
+        return leasePointModelMapper.searchLeasePointByName(lpName);
+    }
 }

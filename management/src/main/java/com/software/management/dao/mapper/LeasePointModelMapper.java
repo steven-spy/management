@@ -40,4 +40,12 @@ public interface LeasePointModelMapper {
      * @return List<LeasePointModel>
      */
     List<LeasePointModel> getAll();
+
+    /**
+     * 根据名称搜索租赁点
+     *
+     * @param lpName
+     * @return List<LeasePointModel>
+     */
+    List<LeasePointModel> searchLeasePointByName(String lpName);
 }
