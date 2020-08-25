@@ -4,6 +4,7 @@ import {MainComponent} from "./main.component";
 import {BicycleInformationComponent} from "./bicycle-information/bicycle-information.component";
 import {BicycleRepairComponent} from "./bicycle-repair/bicycle-repair.component";
 import {LeasePointComponent} from "./lease-point/lease-point.component";
+import {BicycleInformationModelComponent} from "./bicycle-information/bicycle-information-model/bicycle-information-model.component";
 
 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
       {
         path: 'bicycleInformation',
         component: BicycleInformationComponent
+      },
+      {
+        path: 'bicycleInformationModel',
+        component: BicycleInformationModelComponent
       },
       {
         path: 'bicycleRepair',

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {BicycleInformationService} from "../../Service/bicycleInformation.service";
+import {Router} from "@angular/router";
 
 declare var BMap: any;
 
@@ -25,6 +26,7 @@ export class BicycleInformationComponent implements OnInit {
   text: string;
 
   constructor(
+    private router: Router,
     private bicycleInformationService: BicycleInformationService
   ) {
   }
@@ -43,7 +45,7 @@ export class BicycleInformationComponent implements OnInit {
   }
 
   addBicycle() {
-
+    this.router.navigate(['/main/bicycleInformationModel']);
   }
 
   searchBicycle() {
